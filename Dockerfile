@@ -6,8 +6,7 @@ LABEL version="v0.1"
 RUN apt-get update
 RUN apt-get install -y syslog-ng
 
-# Stop the container
-STOPSIGNAL SIGTERM
+ADD syslog-ng.conf /etc/syslog-ng/syslog-ng.conf
 
 # Expose the UDP port needed for syslog-ng to receive files
 EXPOSE 514/udp
